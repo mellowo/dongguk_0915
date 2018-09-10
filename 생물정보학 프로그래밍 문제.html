@@ -527,27 +527,6 @@ div.prism-show-language > div.prism-show-language-label {
 
 <body>
 
-<h1>목차</h1>
-
-<ul class="toc">
-
-<li>
-    <a href="#toc_1">소개</a>
-</li>  
-
-<br>
-
-<li>
-<a href="#toc_0">생물 정보학 프로그래밍</a>
-<ul>
-<li>
-<a href="#toc_3">파일 핸들 및 Fasta 포멧 파일 파싱</a>
-</li>
-
-</ul>
-</li>
-</ul>
-
 <h1 id="toc_1">소개</h1>
 <div><pre>
 
@@ -574,18 +553,33 @@ div.prism-show-language > div.prism-show-language-label {
 <ol>
 <li><p>&quot;This is a sequence file.&quot;이라는 내용을 가진 <code>title.txt</code> 파일을 만든다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_1.py
+<div><pre class="line-numbers"><code class="language-bash">$ python bioinfo_1.py
 $ cat title.txt
 This is a sequence file.
 $</code></pre></div></li><br>
 <li><p>위에서 만든 <code>title.txt</code> 파일의 첫째줄을 읽어 다음과 같이 출력한다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_2.py
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_2.py
 The first line is: This is a sequence file.
+$</code></pre></div></li><br>
+
+<li><p>github 에서 받은 파일, <code>_1.csv</code> 파일의 내용중 site1에 해당하는 파일의 내용만 출력해 보자.</p>
+
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_3.py
+Sample1 site 1: GA
+Sample2 site 1: GT
+Sample3 site 1: AA
+Sample4 site 1: TA
+$</code></pre></div></li><br>
+
+<li><p>github 에서 받은 파일, <code>_2.tsv</code> 파일의 내용중 male의 평균 나이를 출력해 보자.</p>
+
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_4.py
+male's average age: 24.2301
 $</code></pre></div></li><br>
 <li><p><a href="https://www.ncbi.nlm.nih.gov/protein/AAB07223.1?report=fasta"><code>https://www.ncbi.nlm.nih.gov/protein/AAB07223.1?report=fasta</code></a>에서 protein FASTA 파일을 받아 <code>sequence.protein.fasta</code>란 이름으로 저장한 후 그 내용을 읽어 다음과 같이 출력한다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_3.py
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_3.py
 &gt;AAB07223.1 BRCA2 [Homo sapiens]
 MPIGSKERPTFFEIFKTRCNKADLGPISLNWFEELSSEAPPYNSEPAEESEHKNNNYEPNLFKTPQRKPS
 ...
@@ -593,7 +587,7 @@ QFISVSESTRTAPTSSEDYLRLKRRCTTSLIKEQESSQASTEECEKNKQDTITTKKYI
 $</code></pre></div></li><br>
 <li><p>위의 <code>sequence.protein.fasta</code> 파일의 내용을 <code>sequence.protein.2.fasta</code> 파일로 출력한다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_4.py
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_4.py
 $ cat sequence.protein.2.fasta
 &gt;AAB07223.1 BRCA2 [Homo sapiens]
 MPIGSKERPTFFEIFKTRCNKADLGPISLNWFEELSSEAPPYNSEPAEESEHKNNNYEPNLFKTPQRKPS
@@ -602,19 +596,19 @@ QFISVSESTRTAPTSSEDYLRLKRRCTTSLIKEQESSQASTEECEKNKQDTITTKKYI
 $</code></pre></div></li><br>
 <li><p>위에서 만든 <code>sequence.protein.2.fasta</code>의 두번째줄을 다음과 같이 출력한다. </p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_5.py
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_5.py
 The second line is: MPIGSKERPTFFEIFKTRCNKADLGPISLNWFEELSSEAPPYNSEPAEESEHKNNNYEPNLFKTPQRKPS
 $</code></pre></div></li><br>
 <li><p><code>sequence.protein.2.fasta</code>의 첫째줄은 <code>title</code>이란 변수에, 
 둘째줄부터 끝까지는 개행문자를 없앤 후 <code>seq</code>이란 변수에 저장하고 다음과 같이 출력한다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_6.py
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_6.py
 title: &gt;AAB07223.1 BRCA2 [Homo sapiens]
 seq: MPIGSKERPT...QDTITTKKYI
 $</code></pre></div></li><br>
 <li><p>위에서 만든 <code>seq</code> 문자열의 위치를 물어보고, 입력된 위치에서 시작하는 3개의 아미노산을 다음과 같이 출력한다. <code>XXX</code>를 입력할 때 까지 이 작업을 반복한다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_7.py
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_7.py
 Position: 15
 Three amino acids: FKT
 Position: 20
@@ -624,7 +618,7 @@ Okay, I will stop.
 $</code></pre></div></li><br>
 <li><p>찾고자 하는 아미노산을 물어보고, 입력된 아미노산을 가진 <code>seq</code> 문자열의 모든 위치를 다음과 같이 출력한다. <code>XXX</code>를 입력할 때 까지 이 작업을 반복한다. </p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_8.py
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_8.py
 Searching for: S
 Found at: 5, 28, 36, 37, 44, ..., 3376, 3389, 3396, 3397, 3400
 Searching for: Q
@@ -633,7 +627,7 @@ Searching for: XXX
 Okay, I will stop.
 $</code></pre></div></li><br>
 
-<li><p>github에서 다운 받은 <code>BRCA_tran.fasta</code>파일을 열어 화면에 10줄 까지만 출력해본다. <div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_8.py
+<li><p>github에서 다운 받은 <code>BRCA_tran.fasta</code>파일을 열어 화면에 10줄 까지만 출력해본다. <div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_9.py
 >NM_007294.3 Homo sapiens BRCA1, DNA repair associated (BRCA1), transcript variant 1, mRNA
 GTACCTTGATTTCGTATTCTGAGAGGCTGCTGCTTAGCGGTAGCCCCTTGGTTTCCGTGGCAACGGAAAA
 GCGCGGGAATTACAGATAAATTAAAACTGCGACTGCGCGGCGTGAGCTCGCTGAGACTTCCTGGACGGGG
@@ -646,7 +640,7 @@ TTGAAAATCATTTGTGCTTTTCAGCTTGACACAGGTTTGGAGTATGCAAACAGCTATAATTTTGCAAAAA
 AGGAAAATAACTCTCCTGAACATCTAAAAGATGAAGTTTCTATCATCCAAAGTATGGGCTACAGAAACCG  
 $</code></pre></div></li><br>
 
-<li><p>github에서 다운 받은 <code>BRCA_tran.fasta</code>의 역상보 서열을 화면에 출력해 본다. 서열은 70줄 간격으로 줄바꿔 출력한다.<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_8.py
+<li><p>github에서 다운 받은 <code>BRCA_tran.fasta</code>의 역상보 서열을 화면에 출력해 본다. 서열은 70줄 간격으로 줄바꿔 출력한다.<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_10.py
 TTTTTTTTTTTTTTTTTTGGAAGTGTTTGCTACCAAGTTTATTTGCAGTGTTAACAGCACAACATTTACA
 AAACGTATTTTGTACAATCAAGTCTTCACTGCCCTTGCACACTGGGGGGGCTAGGGAAGACCTAGTCCTT
 CCAACAGCTATAAACAGTCCTGGATAATGGGTTTATGAAAAACACTTTTTCTTCCTTCAGCAAGCAAAAT
@@ -672,7 +666,7 @@ TGTAATTCCCGCGCTTTTCCGTTGCCACGGAAACCAAGGGGCTACCGCTAAGCAGCAGCCTCTCAGAATA
 CGAAATCAAGGTAC
 $</code></pre></div></li><br>
 
-<li><p>github에서 다운 받은 <code>BRCA_tran.fasta</code>파일의 서열을 번역하여 단백질 서열을 출력해보자. 그리고 이를 github에서 받은 <code>BRCA_PRO.fasta</code> 파일의 단백질 서열과 같은지 비교해 보자. 단백질 서열은 70개 단위로 줄바꿔 출력한다. <div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_8.py
+<li><p>github에서 다운 받은 <code>BRCA_tran.fasta</code>파일의 서열을 번역하여 단백질 서열을 출력해보자. 그리고 이를 github에서 받은 <code>BRCA_PRO.fasta</code> 파일의 단백질 서열과 같은지 비교해 보자. 단백질 서열은 70개 단위로 줄바꿔 출력한다. <div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_11.py
 MDLSALRVEEVQNVINAMQKILECPICLELIKEPVSTKCDHIFCKFCMLKLLNQKKGPSQCPLCKNDITK
 RSLQESTRFSQLVEELLKIICAFQLDTGLEYANSYNFAKKENNSPEHLKDEVSIIQSMGYRNRAKRLLQS
 EPENPSLQETSLSVQLSNLGTVRTLRTKQRIQPQKTSVYIELGSDSSEDTVNKATYCSVGDQELLQITPQ
@@ -704,7 +698,7 @@ $</code></pre></div></li><br>
 
 <li><p>fastq 파일을 만들어본다. read1의 header부분은 @1 read1으로 시작하고 read2의 header부분은 @1 read2로 시작한다. 다음 read 마다 +1이 된다. read길이는 101로 하고 read의 갯수는 총 10000개로 한다. 시퀀스는 A,T,G,C중에 랜덤으로 생성 되게 하며 퀄리티 역시 랜덤으로 발생되게 한다. 결과 파일의 이름은 R1.fastq R2.fastq로 저장한다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_9.py R1.fastq R2.fastq
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_12.py R1.fastq R2.fastq
 $ cat R1.fastq
 @1      read1
 AGGACAATCTCGGCTTCCTTTGCCCCATTGTTTTAAGCCAAACGACACATCAAGACCGTACCAAGTAACGATCGCGCGTGCGCAAGGTCGAAGAACTTGTA
@@ -723,7 +717,7 @@ $</code></pre></div></li><br>
 
 <li><p>github에서 받은 fastq파일(NA12878)의 A,T,G,C,N 의 갯수와 read갯수, GC비율, quality값(Q20 비율,Q30비율)을 구한다.</p>
 
-<div><pre class="line-numbers"><code class="language-bash">$ python bioinformatics_3_10.py NA12878_R1.fastq NA12878_R2.fastq
+<div><pre class="line-numbers"><code class="language-bash">$ python python bioinfo_13.py NA12878_R1.fastq NA12878_R2.fastq
 total base : 5178270
 A : 1525522     T : 1516475     G : 1089285     C : 1045249     N : 1739
 total read : 51270
